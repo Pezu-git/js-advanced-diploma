@@ -1,0 +1,40 @@
+{
+  "name": "unit-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pezu-git/unit-test.git"
+  },
+  "author": "pezu-git",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pezu-git/unit-test/issues"
+  },
+  "homepage": "https://github.com/Pezu-git/unit-test#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3",
+    "live-server": "^1.2.1",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3"
+  }
+}
