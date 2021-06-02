@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable no-plusplus */
 export function calcTileType(index, boardSize) {
   if (index === 0) {
     return 'top-left';
@@ -44,4 +46,57 @@ export function calcHealthLevel(health) {
   }
 
   return 'high';
+}
+
+export function calcCanWalk(step) {
+  let i = 1;
+  const arr = [];
+  do {
+    arr.push(i);
+    i++;
+  } while (i <= step);
+  console.log(arr);
+  return arr;
+}
+
+// расчёт длинны шага персонажа
+export function calcStep(index, position, boardSize) {
+  return Math.abs((index % boardSize) - (position % boardSize));
+}
+
+
+// условия совершения шага по диагонали
+
+
+function calcStepArr(step) {
+  let i = 1;
+  const arr = [];
+  while (i <= step) {
+    arr.push(i);
+    i++;
+  }
+  return arr;
+}
+
+function calcStepY(index, position, boardSize, step) {
+  const math = Math.abs((position - index) / boardSize);
+  return calcStepArr(step).includes(math);
+}
+function calcStepX(index, position, prevStep) {
+  if (index === position - prevStep || index === position + prevStep) {
+    return true;
+  }
+  return false;
+}
+
+export function canStep(index, position, boardSize, prevStep, step) {
+  if ((boardSize ** 2 - index === boardSize ** 2 - (position + boardSize * prevStep + prevStep)
+  || boardSize ** 2 - index === boardSize ** 2 - (position - boardSize * prevStep + prevStep)
+  || boardSize ** 2 - index === boardSize ** 2 - (position + boardSize * prevStep - prevStep)
+  || boardSize ** 2 - index === boardSize ** 2 - (position - boardSize * prevStep - prevStep))
+    || calcStepY(index, position, boardSize, step)
+      || calcStepX(index, position, prevStep)) {
+    return true;
+  }
+  return false;
 }

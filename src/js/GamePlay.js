@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import { calcHealthLevel, calcTileType } from './utils.js';
 
 export default class GamePlay {
@@ -177,11 +178,13 @@ export default class GamePlay {
     this.loadGameListeners.forEach((o) => o.call(null));
   }
 
-  static showError(message) {
-    alert(message);
+  showError(message) {
+    this.message = message;
+    alert(this.message);
   }
 
-  static showMessage(message) {
+  showMessage(message) {
+    this.message = message;
     alert(message);
   }
 

@@ -2,6 +2,8 @@ import Character from './Character.js';
 
 export default class PositionedCharacter {
   constructor(character, position) {
+    // console.log(character);
+    // console.log(position);
     if (!(character instanceof Character)) {
       throw new Error('character must be instance of Character or its children');
     }
