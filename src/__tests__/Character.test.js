@@ -3,12 +3,12 @@
 import Character from '../js/Character.js';
 import Bowman from '../js/Bowman.js';
 
-test('Класс должен создать инстанс если он не вызван самим Character', () => {
+test('Charcter-first-test', () => {
   const bowman = new Bowman(1);
   expect(bowman).toBeDefined();
 });
 
-test('Класс должен выбрасывать ошибку если пытаются создать инстанс самого класса Character', () => {
+test('Character-Error', () => {
   function instanceNotCreated() {
     try {
       return new Character(1);
@@ -20,7 +20,7 @@ test('Класс должен выбрасывать ошибку если пы�
   expect(instanceNotCreated).toThrow();
 });
 
-test('Метод levelUp() корректно увеличивать левел', () => {
+test('levelUp-first_test', () => {
   const bowman = new Bowman(1);
   bowman.levelUp();
   const referenceObject = {
@@ -36,7 +36,7 @@ test('Метод levelUp() корректно увеличивать левел'
   expect(bowman).toEqual(referenceObject);
 });
 
-test('Метод levelUp() корректно увеличивать левел', () => {
+test('levelUp-second_test', () => {
   const bowman = new Bowman(1);
   bowman.health = 0;
 
